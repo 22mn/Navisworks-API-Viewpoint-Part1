@@ -61,7 +61,11 @@ namespace Lab10_Exercise
 
             // update the current viewpoint
             doc.CurrentViewpoint.CopyFrom(vpoint);
-            
+
+            SavedViewpoint savedViewpoint = new SavedViewpoint(vpoint);
+            savedViewpoint.DisplayName = "Lab10_Viewpoint";
+            doc.SavedViewpoints.AddCopy(savedViewpoint);
+
             /*
             f.MessageBox.Show(String.Format("{0}", newAngle));
             f.MessageBox.Show(String.Format("{0} {1} {2} {3}", newRotation.A,newRotation.B,
